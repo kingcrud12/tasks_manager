@@ -1,16 +1,12 @@
-import { Stack } from "@mui/material";
-import NavBar from "./components/NavBar";
-import Tasks from "./components/Tasks";
+import { useState } from "react";
+import { Button } from "react-bootstrap";
 
 function App() {
+  const [count, setCount] = useState(0);
   return (
-    <Stack gap="30px">
-      <NavBar />
-      <Stack gap="30px" direction="row">
-        <Tasks title="Sleeping" text="I'll do it after coding" />
-        <Tasks title="coding" text="I'll do it after sleeping" />
-      </Stack>
-    </Stack>
+    <div>
+      <Button onClick={() => setCount(count + 1)}>clicked {count} times</Button>
+    </div>
   );
 }
 
